@@ -3,11 +3,10 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 48;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		215E6D301C7520BD00126FE9 /* OperationalTransformation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 215E6D251C7520BD00126FE9 /* OperationalTransformation.framework */; };
 		215E6D5D1C7532E200126FE9 /* OperationalTransformation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 215E6D531C7532E200126FE9 /* OperationalTransformation.framework */; };
 		21A739B51D1712DF006CE2C7 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A739AA1D1712DF006CE2C7 /* Message.swift */; };
 		21A739B61D1712DF006CE2C7 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A739AA1D1712DF006CE2C7 /* Message.swift */; };
@@ -24,13 +23,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		215E6D311C7520BD00126FE9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 215E6D1C1C7520BD00126FE9 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 215E6D241C7520BD00126FE9;
-			remoteInfo = OperationTransport;
-		};
 		215E6D5E1C7532E200126FE9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 215E6D1C1C7520BD00126FE9 /* Project object */;
@@ -67,7 +59,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				215E6D301C7520BD00126FE9 /* OperationalTransformation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -191,7 +182,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				215E6D321C7520BD00126FE9 /* PBXTargetDependency */,
 			);
 			name = "OperationalTransformationTests-iOS";
 			productName = OperationTransportTests;
@@ -241,14 +231,16 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "Canvas Labs, Inc.";
 				TargetAttributes = {
 					215E6D241C7520BD00126FE9 = {
 						CreatedOnToolsVersion = 7.3;
+						LastSwiftMigration = 0830;
 					};
 					215E6D2E1C7520BD00126FE9 = {
 						CreatedOnToolsVersion = 7.3;
+						LastSwiftMigration = 0830;
 					};
 					215E6D521C7532E200126FE9 = {
 						CreatedOnToolsVersion = 7.3;
@@ -259,7 +251,7 @@
 				};
 			};
 			buildConfigurationList = 215E6D1F1C7520BD00126FE9 /* Build configuration list for PBXProject "OperationalTransformation" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -351,11 +343,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		215E6D321C7520BD00126FE9 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 215E6D241C7520BD00126FE9 /* OperationalTransformation-iOS */;
-			targetProxy = 215E6D311C7520BD00126FE9 /* PBXContainerItemProxy */;
-		};
 		215E6D5F1C7532E200126FE9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 215E6D521C7532E200126FE9 /* OperationalTransformation-macOS */;
@@ -379,8 +366,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -430,8 +419,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -452,6 +443,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -463,6 +455,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -474,6 +467,7 @@
 				PRODUCT_NAME = OperationalTransformation;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -481,6 +475,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -491,6 +486,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.usecanvas.operationaltransformation;
 				PRODUCT_NAME = OperationalTransformation;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -498,9 +494,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				INFOPLIST_FILE = "Support/Tests-Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.usecanvas.operationaltransformation.tests;
 				PRODUCT_NAME = OperationalTransformation;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -508,9 +504,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				INFOPLIST_FILE = "Support/Tests-Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.usecanvas.operationaltransformation.tests;
 				PRODUCT_NAME = OperationalTransformation;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

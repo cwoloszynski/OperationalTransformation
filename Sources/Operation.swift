@@ -32,15 +32,15 @@ public enum Operation {
 	
 	public init?(dictionary: [String: AnyObject]) {
 		guard let type = dictionary["type"] as? String,
-			location = dictionary["location"] as? UInt
+			let location = dictionary["location"] as? UInt
 			else { return nil }
 		
-		if let string = dictionary["text"] as? String where type == "insert" {
+		if let string = dictionary["text"] as? String, type == "insert" {
 			self = .insert(location: location, string: string)
 			return
 		}
 		
-		if let length = dictionary["length"] as? UInt where type == "remove" {
+		if let length = dictionary["length"] as? UInt, type == "remove" {
 			self = .remove(location: location, length: length)
 			return
 		}

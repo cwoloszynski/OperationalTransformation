@@ -15,7 +15,7 @@ enum Message {
 	init?(dictionary: [String: AnyObject]) {
 		guard let type = dictionary["type"] as? String else { return nil }
 
-		if type == "operation", let dict = dictionary["operation"] as? [String: AnyObject], operation = Operation(dictionary: dict) {
+		if type == "operation", let dict = dictionary["operation"] as? [String: AnyObject], let operation = Operation(dictionary: dict) {
 			self = .operation(operation: operation)
 			return
 		}

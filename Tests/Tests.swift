@@ -7,6 +7,6 @@
 //
 
 import XCTest
-import OperationalTransformation
+// @testable import OperationalTransformation
 
 class Tests: XCTestCase {}
