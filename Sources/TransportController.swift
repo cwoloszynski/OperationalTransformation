@@ -32,7 +32,7 @@ open class TransportController: NSObject {
 
 	open let serverURL: URL
 	fileprivate let accessToken: String
-	open let organizationID: String
+	open let projectID: String
 	open let canvasID: String
 	open let debug: Bool
 	open weak var delegate: TransportControllerDelegate?
@@ -42,10 +42,10 @@ open class TransportController: NSObject {
 	
 	// MARK: - Initializers
 	
-	public init(serverURL: URL, accessToken: String, organizationID: String, canvasID: String, debug: Bool = false) {
+	public init(serverURL: URL, accessToken: String, projectID: String, canvasID: String, debug: Bool = false) {
 		self.serverURL = serverURL
 		self.accessToken = accessToken
-		self.organizationID = organizationID
+		self.projectID = projectID
 		self.canvasID = canvasID
 		self.debug = debug
 		
@@ -67,7 +67,7 @@ open class TransportController: NSObject {
 		let js = "Canvas.connect({" +
 			"realtimeURL: '\(serverURL.absoluteString)', " +
 			"accessToken: '\(accessToken)', " +
-			"orgID: '\(organizationID)', " +
+			"orgID: '\(projectID)', " +
 			"canvasID: '\(canvasID)', " +
 			"debug: \(debug)" +
 		"});"
