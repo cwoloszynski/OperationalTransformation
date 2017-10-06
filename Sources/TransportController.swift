@@ -5,53 +5,56 @@
 //  Created by Sam Soffes on 11/10/15.
 //  Copyright © 2015 Canvas Labs, Inc. All rights reserved.
 //
-
-import WebKit
+// Rewritten by Charlie Woloszynski on 9/28/2017 to move to CloudKit based
+// Copyright (c) 2017 Handheld Media, LLC.  All rights reserved.
+//
+import Foundation
+import CanvasNative
 
 public protocol TransportControllerDelegate: class {
-	func transportController(_ controller: TransportController, willConnectWithWebView webView: WKWebView)
+	// func transportController(_ controller: TransportController, willConnectWithWebView webView: WKWebView)
 	func transportController(_ controller: TransportController, didReceiveSnapshot text: String)
 	func transportController(_ controller: TransportController, didReceiveOperation operation: Operation)
-	func transportController(_ controller: TransportController, didReceiveWebErrorMessage errorMessage: String?, lineNumber: UInt?, columnNumber: UInt?)
+	// func transportController(_ controller: TransportController, didReceiveWebErrorMessage errorMessage: String?, lineNumber: UInt?, columnNumber: UInt?)
 	func transportController(_ controller: TransportController, didDisconnectWithErrorMessage errorMessage: String?)
 }
 
-private let indexHTML: String? = {
+/* private let indexHTML: String? = {
 	let bundle = Bundle(for: TransportController.self)
 	guard let editorPath = bundle.path(forResource: "index", ofType: "html"),
 		let html = try? String(contentsOfFile: editorPath, encoding: String.Encoding.utf8)
 	else { return nil }
 
 	return html
-}()
+}() */
 
 
 open class TransportController: NSObject {
 	
 	// MARK: - Properties
 
-	open let serverURL: URL
-	fileprivate let accessToken: String
+	// open let serverURL: URL
+	// fileprivate let accessToken: String
 	open let projectID: String
 	open let canvasID: String
 	open let debug: Bool
 	open weak var delegate: TransportControllerDelegate?
 
-	var webView: WKWebView!
+	// var webView: WKWebView!
 
 	
 	// MARK: - Initializers
 	
-	public init(serverURL: URL, accessToken: String, projectID: String, canvasID: String, debug: Bool = false) {
-		self.serverURL = serverURL
-		self.accessToken = accessToken
+	public init(/* serverURL: URL, accessToken: String, */projectID: String, canvasID: String, debug: Bool = false) {
+		// self.serverURL = serverURL
+		// self.accessToken = accessToken
 		self.projectID = projectID
 		self.canvasID = canvasID
 		self.debug = debug
 		
 		super.init()
 
-		let configuration = WKWebViewConfiguration()
+		/* let configuration = WKWebViewConfiguration()
 		configuration.allowsAirPlayForMediaPlayback = false
 
 		#if !os(OSX)
@@ -80,24 +83,32 @@ open class TransportController: NSObject {
 		#if !os(OSX)
 			webView.scrollView.scrollsToTop = false
 		#endif
-
+		*/
 	}
 
 
 	// MARK: - Connecting
 
 	open func connect() {
-		guard let html = indexHTML else { return }
+		/* guard let html = indexHTML else { return }
 
 		if webView.superview == nil {
 			delegate?.transportController(self, willConnectWithWebView: webView)
 		}
 		
 		webView.loadHTMLString(html, baseURL: URL(string: "https://usecanvas.com/"))
+		*/
+		
+		// Connect to iCloud, or report that we are working offline
+		DispatchQueue.main.async {
+			// Load local file
+			let fileContents = "\(leadingNativePrefix)doc-heading\(trailingNativePrefix)Untitled\n"
+			self.delegate?.transportController(self, didReceiveSnapshot: fileContents)
+		}
 	}
 
 	open func disconnect(withReason reason: String? = nil) {
-		webView.removeFromSuperview()
+		// webView.removeFromSuperview()
 		delegate?.transportController(self, didDisconnectWithErrorMessage: reason)
 	}
 	
@@ -114,20 +125,21 @@ open class TransportController: NSObject {
 	// MARK: - Private
 	
 	fileprivate func insert(atLocation location: UInt, string: String) {
-		guard let data = try? JSONSerialization.data(withJSONObject: [string], options: []),
+		/* guard let data = try? JSONSerialization.data(withJSONObject: [string], options: []),
 			let json = String(data: data, encoding: String.Encoding.utf8)
 		else { return }
-		
+
 		webView.evaluateJavaScript("Canvas.insert(\(location), \(json)[0]);", completionHandler: nil)
+		*/
 	}
 	
 	fileprivate func remove(atLocation location: UInt, length: UInt) {
-		webView.evaluateJavaScript("Canvas.remove(\(location), \(length));", completionHandler: nil)
+		// webView.evaluateJavaScript("Canvas.remove(\(location), \(length));", completionHandler: nil)
 	}
 }
 
 
-extension TransportController: WKScriptMessageHandler {
+/* extension TransportController: WKScriptMessageHandler {
 	public func userContentController(_ userContentController: WKUserContentController, didReceive scriptMessage: WKScriptMessage) {
 		guard let dictionary = scriptMessage.body as? [String: AnyObject],
 			let message = Message(dictionary: dictionary)
@@ -147,4 +159,4 @@ extension TransportController: WKScriptMessageHandler {
 			delegate?.transportController(self, didReceiveWebErrorMessage: errorMessage, lineNumber: lineNumber, columnNumber: columnNumber)
 		}
 	}
-}
+} */
