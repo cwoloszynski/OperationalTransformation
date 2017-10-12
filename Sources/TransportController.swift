@@ -102,7 +102,7 @@ open class TransportController: NSObject {
 		// Connect to iCloud, or report that we are working offline
 		DispatchQueue.main.async {
 			// Load local file
-			let fileContents = "\(leadingNativePrefix)doc-heading\(trailingNativePrefix)Untitled\n"
+			let fileContents = "\(leadingNativePrefix)doc-heading\(trailingNativePrefix)Untitled"
 			self.delegate?.transportController(self, didReceiveSnapshot: fileContents)
 		}
 	}
