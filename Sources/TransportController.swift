@@ -100,11 +100,17 @@ open class TransportController: NSObject {
 		*/
 		
 		// Connect to iCloud, or report that we are working offline
-		DispatchQueue.main.async {
+		// Need to align this report with the local state once we get this in place.
+		// For now, this needs to move to the 'LocalPersistenceController'
+		// and be the results of reading a non-existant file
+		//
+		// DispatchQueue.main.async {
 			// Load local file
-			let fileContents = "\(leadingNativePrefix)doc-heading\(trailingNativePrefix)Untitled"
-			self.delegate?.transportController(self, didReceiveSnapshot: fileContents)
-		}
+			// let fileContents = "\(leadingNativePrefix)doc-heading\(trailingNativePrefix)Untitled"
+			// FIXME:  This probably will need some form of snapShot version ID to align this
+			// with the distributed management of changes.  
+			//self.delegate?.transportController(self, didReceiveSnapshot: fileContents)
+		// }
 	}
 
 	open func disconnect(withReason reason: String? = nil) {
