@@ -20,6 +20,7 @@
 		21A739C21D1712DF006CE2C7 /* OperationTransport.h in Headers */ = {isa = PBXBuildFile; fileRef = 21A739B11D1712DF006CE2C7 /* OperationTransport.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		21A739C71D171327006CE2C7 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A739B41D1712DF006CE2C7 /* Tests.swift */; };
 		21A739C81D171327006CE2C7 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A739B41D1712DF006CE2C7 /* Tests.swift */; };
+		CB8FF6F31FBD2D5D0062AC2E /* CanvasNative.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB8FF6F41FBD2D5D0062AC2E /* CanvasNative.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		21A739B11D1712DF006CE2C7 /* OperationTransport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OperationTransport.h; sourceTree = "<group>"; };
 		21A739B21D1712DF006CE2C7 /* Tests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Tests-Info.plist"; sourceTree = "<group>"; };
 		21A739B41D1712DF006CE2C7 /* Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
+		CB8FF6F41FBD2D5D0062AC2E /* CanvasNative.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CanvasNative.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB8FF6F31FBD2D5D0062AC2E /* CanvasNative.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,6 +90,7 @@
 				21A739AD1D1712DF006CE2C7 /* Support */,
 				21A739B31D1712DF006CE2C7 /* Tests */,
 				215E6D261C7520BD00126FE9 /* Products */,
+				CB8FF6F21FBD2D5D0062AC2E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 			usesTabs = 1;
@@ -129,6 +133,14 @@
 				21A739B41D1712DF006CE2C7 /* Tests.swift */,
 			);
 			path = Tests;
+			sourceTree = "<group>";
+		};
+		CB8FF6F21FBD2D5D0062AC2E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CB8FF6F41FBD2D5D0062AC2E /* CanvasNative.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
