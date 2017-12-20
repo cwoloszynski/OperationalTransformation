@@ -27,15 +27,16 @@
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       language = ""
-      shouldUseLaunchSchemeArgsEnv = "YES">
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      codeCoverageEnabled = "YES">
       <Testables>
          <TestableReference
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "215E6D2E1C7520BD00126FE9"
-               BuildableName = "OperationalTransformation.xctest"
-               BlueprintName = "OperationalTransformationTests-iOS"
+               BlueprintIdentifier = "CBD8912A1FEAF3D200C6DA4E"
+               BuildableName = "OperationalTransformationTests.xctest"
+               BlueprintName = "OperationalTransformationTests"
                ReferencedContainer = "container:OperationalTransformation.xcodeproj">
             </BuildableReference>
          </TestableReference>

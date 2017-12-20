@@ -2,6 +2,19 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>OperationalTransformation-iOS.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>56</integer>
+		</dict>
+		<key>OperationalTransformation-macOS.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>57</integer>
+		</dict>
+	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>215E6D241C7520BD00126FE9</key>
@@ -20,6 +33,11 @@
 			<true/>
 		</dict>
 		<key>215E6D5B1C7532E200126FE9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CBD8912A1FEAF3D200C6DA4E</key>
 		<dict>
 			<key>primary</key>
 			<true/>

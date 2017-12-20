@@ -29,7 +29,7 @@ public protocol TransportControllerDelegate: class {
 }() */
 
 
-open class TransportController: NSObject {
+public class TransportController: NSObject {
 	
 	// MARK: - Properties
 
